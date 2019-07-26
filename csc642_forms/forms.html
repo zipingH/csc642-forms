@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+    h1{
+      text-align: center;
+    }
+
+    form{
+      width:80%;
+      margin:15px 0 0 20%;
+    }
+    </style>
+
+
+  </head>
+  <body>
+    <h1>Ziping Huang's <br> Registration Form Page</h1>
+
+  <form class="needs-validation" action="results.php" method="POST" novalidate>
+  <!--Form group by first and last name-->
+  <div class="form-group">
+  <div class="form-row">
+    <div class="col-md-9 mb-3">
+      <label for="validationServer01">First name *</label>
+      <input type="text" class="form-control" id="validationServer01" name ="firstName" placeholder="First name" maxlength="40" onkeypress="return (event.charCode > 64 && 
+      event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required>
+      <div class="invalid-feedback">
+         Please fill out this field.
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-9 mb-3">
+      <label for="validationServer02">Last name *</label>
+      <input type="text" class="form-control" id="validationServer02" name = "lastName" placeholder="Last name" maxlength="40" onkeypress="return (event.charCode > 64 && 
+      event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required>
+      <div class="invalid-feedback">
+          Please fill out this field.
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!--Form group by address, city, state, and zip -->
+    <div class="form-group">
+        <div class="form-row">
+    <div class="col-md-9 mb-3">
+        <label for="inputAddress">Address *</label>
+        <input type="text" class="form-control " id="street" name="street" placeholder="1234 Main St" maxlength="40" required>
+        <div class="invalid-feedback">
+            Please fill out this field.
+        </div>
+      </div>
+    </div>
+
+      <div class="form-row">
+      <div class="col-md-3 mb-3">
+      <label for="inputCity">City *</label>
+        <input type="text" class="form-control" id="city" name ="city" placeholder="City" maxlength="40" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+
+      <div class="col-md-3 mb-3">
+      <label for="selectState">State *</label>
+      <select class="custom-select" name="state" id="state" required>
+          <option value="" selected="selected">Select a State</option>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="DC">District Of Columbia</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option>
+          <option value="IN">Indiana</option>
+          <option value="IA">Iowa</option>
+          <option value="KS">Kansas</option>
+          <option value="KY">Kentucky</option>
+          <option value="LA">Louisiana</option>
+          <option value="ME">Maine</option>
+          <option value="MD">Maryland</option>
+          <option value="MA">Massachusetts</option>
+          <option value="MI">Michigan</option>
+          <option value="MN">Minnesota</option>
+          <option value="MS">Mississippi</option>
+          <option value="MO">Missouri</option>
+          <option value="MT">Montana</option>
+          <option value="NE">Nebraska</option>
+          <option value="NV">Nevada</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NY">New York</option>
+          <option value="NC">North Carolina</option>
+          <option value="ND">North Dakota</option>
+          <option value="OH">Ohio</option>
+          <option value="OK">Oklahoma</option>
+          <option value="OR">Oregon</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="RI">Rhode Island</option>
+          <option value="SC">South Carolina</option>
+          <option value="SD">South Dakota</option>
+          <option value="TN">Tennessee</option>
+          <option value="TX">Texas</option>
+          <option value="UT">Utah</option>
+          <option value="VT">Vermont</option>
+          <option value="VA">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="WV">West Virginia</option>
+          <option value="WI">Wisconsin</option>
+          <option value="WY">Wyoming</option>
+        </select>
+        <div class="invalid-feedback">Please select a state.</div>
+      </div>
+
+    <div class="col-md-3 mb-3">
+      <label for="validationServer05">Zip *</label>
+      <input type="text"  class="form-control" id="zip" name ="zip" placeholder="Zip"  onkeypress="return isNumeric(event)"  pattern = "[0-9]{5}" required>
+      <div class="invalid-feedback">
+        Please provide a valid 5 digits zip code.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Form group by education and income-->
+<div class="form-group">
+  <div class="form-row">
+      <div class="col-md-9 mb-3">
+      <label for="selectEducation">Education Level</label>
+      <select class="form-control" name ="education" >
+          <option value="" selected="selected">Select your Education Level or Skip</option>
+          <option value="High School">High School</option>
+          <option value="College">College</option>
+          <option value="Graduate Studies">Graduate Studies</option>
+          <option value="Ph.D">Ph.D</option>
+        </select>
+        <!--<div class="invalid-feedback">Please select your education level.</div>-->
+    </div>
+  </div>
+
+  <div class="form-row">
+      <div class="col-md-9 mb-3">
+      <label for="selectIncome"> Income (yearly) </label>
+      <select class="form-control" name="income" >
+          <option value="" selected="selected">Select your annual Income or Skip</option>
+          <option value="Less than $50K">Less than $50K</option>
+          <option value="Between $50-100K">Between $50-100K</option>
+          <option value="Above $100K">Above $100K</option>
+        </select>
+        <!--<div class="invalid-feedback">Please select your annual Income.</div>-->
+    </div>
+  </div>
+</div>
+
+
+<!--Form group by contact informations such as email and phone number-->
+<div class="form-group">
+        <div class="form-row">
+            <div class="col-md-9 mb-3">
+                <label for="inputPhone">Phone Number *</label>
+                <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Phone"  onkeypress="return isNumeric(event)" pattern = "[0-9]{7}" required>
+                <div class="invalid-feedback">
+                    Please enter a 7 digits phone number.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col-md-9 mb-3">
+                  <label for="inputEmail">Email</label>
+                  <input type="email" class="form-control" id="email1"  name = "email" placeholder="example@gmail.com" maxlength="40" required>
+                  <div class="invalid-feedback" >Please enter a valid email address.</div>
+                </div>
+              </div>
+
+
+              <div class="form-row">
+                <div class="col-md-9 mb-3">
+                    <label for="inputEmail">Confirm Email</label>
+                    <input type="email" class="form-control" id="email2"  name = "email" placeholder="Confirm your Email" maxlength="40" onfocus="validateMail(document.getElementById('email1'), this);" 
+                    oninput="validateMail(document.getElementById('email1'), this);" required>
+                    <div class="invalid-feedback" id = "confirmRequired">Email does not match!</div>
+                  </div>
+                </div>
+
+</div>
+
+ <!--Checkbox-->
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
+      <label class="form-check-label" for="invalidCheck3">
+        Agree to terms and conditions *
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+
+  <!--CAPTCHA-->
+  <div class="form-group">
+      <div class="g-recaptcha" data-sitekey="6Le4ta8UAAAAAPSXdIc0E_D91wIkQT3e2bkoEoZO" ></div>
+  </div>
+
+  <button class="btn btn-primary" type="submit" >Submit form</button>
+  
+  <p class="text-muted" style="margin: 15px;">* These fields are required. </p>
+
+
+</form>
+
+
+<script>
+// BootStrap Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+</script>
+
+<script>
+  //function to limit input length of numbers and check if it's number only.
+  //source: http://jsfiddle.net/DRSDavidSoft/zb4ft1qq/1/ 
+    function maxLengthCheck(object) {
+      if (object.value.length > object.maxLength)
+        object.value = object.value.slice(0, object.maxLength)
+    }
+      
+    function isNumeric (evt) {
+      var theEvent = evt || window.event;
+      var key = theEvent.keyCode || theEvent.which;
+      key = String.fromCharCode (key);
+      var regex = /[0-9]|\./;
+      if ( !regex.test(key) ) {
+        theEvent.returnValue = false;
+        if(theEvent.preventDefault) theEvent.preventDefault();
+      }
+    }
+  </script>
+
+  <script>
+    //check if the email fields are the same
+    function validateMail(email1, email2) {
+if (email1.value != email2.value || email1.value == '' || email2.value == '') {
+    email2.setCustomValidity('Email is incorrect');
+} else {
+    email2.setCustomValidity('');
+}
+}
+  </script>
+
+</body>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
