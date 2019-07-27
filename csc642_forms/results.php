@@ -2,7 +2,18 @@
 <head>
 <title>Results Verification Page</title>
 <style>
-  #map{height: 50%; width :50%; margin-left:auto; margin-right:auto;}
+  #map{
+    height: 50%; 
+    width :50%;
+    margin-left:auto;
+    margin-right:auto;
+    }
+  h2{
+    text-align: center;
+  }
+  p{
+    text-align: center;
+  }
 </style>
 </head>
 <body>
@@ -13,14 +24,14 @@
     echo $_POST ["lastName"];
 ?>
  ></center></h1>
- <br><br>
 <h2>Thank you for submitting this form!</h2> 
 
-<p>Below is a summary of the information you provided:<br><br>  
+<p>Below is a summary of the information you provided:<br>
 
+<div style="width:400px; margin:auto;">
 <?php
-echo 'First Name: ' . $_POST ["firstName"] . '<br>';
-echo 'Last Name: ' . $_POST ["lastName"] . '<br>';
+echo 'Full name: ' . $_POST ["firstName"] . '&nbsp';
+echo  $_POST ["lastName"] . '<br>';
 echo 'Address: ' . $_POST ["street"];
 echo ", ";
 echo $_POST["city"];
@@ -38,7 +49,9 @@ $city = $_POST["city"];
 $state = $_POST["state"];
 $zip = $_POST["zip"];
 ?>
+</div>
 
+<br><br>
 <div id="map"></div>
 
 <script>

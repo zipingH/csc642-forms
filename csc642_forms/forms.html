@@ -9,8 +9,8 @@
     }
 
     form{
-      width:80%;
-      margin:15px 0 0 20%;
+      margin: 15px auto; 
+      width: 50%;
     }
     </style>
 
@@ -18,12 +18,13 @@
   </head>
   <body>
     <h1>Ziping Huang's <br> Registration Form Page</h1>
+   <p style=" width: 50%; margin: 15px auto;">* These fields are required. </p>
 
   <form class="needs-validation" action="results.php" method="POST" novalidate>
   <!--Form group by first and last name-->
   <div class="form-group">
   <div class="form-row">
-    <div class="col-md-9 mb-3">
+    <div class="col-md-6 mb-3">
       <label for="validationServer01">First name *</label>
       <input type="text" class="form-control" id="validationServer01" name ="firstName" placeholder="First name" maxlength="40" onkeypress="return (event.charCode > 64 && 
       event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required>
@@ -31,9 +32,7 @@
          Please fill out this field.
       </div>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-9 mb-3">
+    <div class="col-md-6 mb-3">
       <label for="validationServer02">Last name *</label>
       <input type="text" class="form-control" id="validationServer02" name = "lastName" placeholder="Last name" maxlength="40" onkeypress="return (event.charCode > 64 && 
       event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required>
@@ -44,10 +43,11 @@
   </div>
 </div>
 
+
   <!--Form group by address, city, state, and zip -->
     <div class="form-group">
         <div class="form-row">
-    <div class="col-md-9 mb-3">
+    <div class="col-md-12 mb-3">
         <label for="inputAddress">Address *</label>
         <input type="text" class="form-control " id="street" name="street" placeholder="1234 Main St" maxlength="40" required>
         <div class="invalid-feedback">
@@ -57,7 +57,7 @@
     </div>
 
       <div class="form-row">
-      <div class="col-md-3 mb-3">
+      <div class="col-md-4 mb-3">
       <label for="inputCity">City *</label>
         <input type="text" class="form-control" id="city" name ="city" placeholder="City" maxlength="40" required>
       <div class="invalid-feedback">
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-      <div class="col-md-3 mb-3">
+      <div class="col-md-4 mb-3">
       <label for="selectState">State *</label>
       <select class="custom-select" name="state" id="state" required>
           <option value="" selected="selected">Select a State</option>
@@ -124,7 +124,7 @@
         <div class="invalid-feedback">Please select a state.</div>
       </div>
 
-    <div class="col-md-3 mb-3">
+    <div class="col-md-4 mb-3">
       <label for="validationServer05">Zip *</label>
       <input type="text"  class="form-control" id="zip" name ="zip" placeholder="Zip"  onkeypress="return isNumeric(event)"  pattern = "[0-9]{5}" required>
       <div class="invalid-feedback">
@@ -137,10 +137,10 @@
 <!--Form group by education and income-->
 <div class="form-group">
   <div class="form-row">
-      <div class="col-md-9 mb-3">
-      <label for="selectEducation">Education Level</label>
+      <div class="col-md-12 mb-3">
+      <label for="selectEducation">Education Level (Optional)</label>
       <select class="form-control" name ="education" >
-          <option value="" selected="selected">Select your Education Level or Skip</option>
+          <option value="" selected="selected">Select your Education Level </option>
           <option value="High School">High School</option>
           <option value="College">College</option>
           <option value="Graduate Studies">Graduate Studies</option>
@@ -151,10 +151,10 @@
   </div>
 
   <div class="form-row">
-      <div class="col-md-9 mb-3">
-      <label for="selectIncome"> Income (yearly) </label>
+      <div class="col-md-12 mb-3">
+      <label for="selectIncome"> Income (Optional) </label>
       <select class="form-control" name="income" >
-          <option value="" selected="selected">Select your annual Income or Skip</option>
+          <option value="" selected="selected">Select your annual Income </option>
           <option value="Less than $50K">Less than $50K</option>
           <option value="Between $50-100K">Between $50-100K</option>
           <option value="Above $100K">Above $100K</option>
@@ -168,7 +168,7 @@
 <!--Form group by contact informations such as email and phone number-->
 <div class="form-group">
         <div class="form-row">
-            <div class="col-md-9 mb-3">
+            <div class="col-md-12 mb-3">
                 <label for="inputPhone">Phone Number *</label>
                 <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Phone"  onkeypress="return isNumeric(event)" pattern = "[0-9]{7}" required>
                 <div class="invalid-feedback">
@@ -178,7 +178,7 @@
             </div>
 
             <div class="form-row">
-              <div class="col-md-9 mb-3">
+              <div class="col-md-12 mb-3">
                   <label for="inputEmail">Email</label>
                   <input type="email" class="form-control" id="email1"  name = "email" placeholder="example@gmail.com" maxlength="40" required>
                   <div class="invalid-feedback" >Please enter a valid email address.</div>
@@ -187,7 +187,7 @@
 
 
               <div class="form-row">
-                <div class="col-md-9 mb-3">
+                <div class="col-md-12 mb-3">
                     <label for="inputEmail">Confirm Email</label>
                     <input type="email" class="form-control" id="email2"  name = "email" placeholder="Confirm your Email" maxlength="40" onfocus="validateMail(document.getElementById('email1'), this);" 
                     oninput="validateMail(document.getElementById('email1'), this);" required>
@@ -201,9 +201,7 @@
   <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
-      <label class="form-check-label" for="invalidCheck3">
-        Agree to terms and conditions *
-      </label>
+      <label class="form-check-label" for="invalidCheck3"> I agree to the terms and conditions. *</label>
       <div class="invalid-feedback">
         You must agree before submitting.
       </div>
@@ -212,14 +210,15 @@
 
   <!--CAPTCHA-->
   <div class="form-group">
-      <div class="g-recaptcha" data-sitekey="6Le4ta8UAAAAAPSXdIc0E_D91wIkQT3e2bkoEoZO" ></div>
+      <div class="g-recaptcha" data-sitekey="6Le4ta8UAAAAAPSXdIc0E_D91wIkQT3e2bkoEoZO" data-callback="validCaptcha"></div>
   </div>
 
-  <button class="btn btn-primary" type="submit" >Submit form</button>
   
-  <p class="text-muted" style="margin: 15px;">* These fields are required. </p>
+  <button class="btn btn-secondary" type="reset" style="float: left;" >Reset form</button>
+  <button class="btn btn-primary"  type="submit" style="float: right;">Submit form</button>
 
-
+</div>
+</div>
 </form>
 
 
@@ -267,13 +266,31 @@
   <script>
     //check if the email fields are the same
     function validateMail(email1, email2) {
-if (email1.value != email2.value || email1.value == '' || email2.value == '') {
+  if (email1.value != email2.value || email1.value == '' || email2.value == '') {
     email2.setCustomValidity('Email is incorrect');
 } else {
     email2.setCustomValidity('');
 }
 }
   </script>
+  
+  <script>
+  //enable submit button until captcha is checked
+
+    /*
+   $("form").each(function() {
+            $(this).find(':input[type="submit"]').prop('disabled', true);
+        });
+        
+        function validCaptcha() {
+            $("form").each(function() {
+                $(this).find(':input[type="submit"]').prop('disabled', false);
+            });
+        }
+     */
+       
+  </script>
+
 
 </body>
 
