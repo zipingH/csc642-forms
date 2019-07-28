@@ -5,9 +5,9 @@
 <style>
   #map{
     height: 50%; 
-    width :50%;
-    margin-left:auto;
-    margin-right:auto;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
     }
   h2{
     text-align: center;
