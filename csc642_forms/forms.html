@@ -11,13 +11,13 @@
     }
 
     form{
-      margin: 15px auto; 
       width: 50%;
+      margin: 15px auto;
     }
+
     .text-xs-center{
       text-align: center;
     }
-
     </style>
   </head>
 
@@ -31,18 +31,16 @@
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationServer01">First name *</label>
-      <input type="text" class="form-control" id="validationServer01" name ="firstName" placeholder="First name" maxlength="40" onkeypress="return (event.charCode > 64 && 
-      event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required>
+      <input type="text" class="form-control" id="validationServer01" name ="firstName" placeholder="First name" maxlength="40"  pattern="[A-Za-z\s]+" required>
       <div class="invalid-feedback">
-         Please fill out this field.
+         Please enter your first name.
       </div>
     </div>
     <div class="col-md-6 mb-3">
       <label for="validationServer02">Last name *</label>
-      <input type="text" class="form-control" id="validationServer02" name = "lastName" placeholder="Last name" maxlength="40" onkeypress="return (event.charCode > 64 && 
-      event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required>
+      <input type="text" class="form-control" id="validationServer02" name = "lastName" placeholder="Last name" maxlength="40"  pattern="[A-Za-z\s]+" required>
       <div class="invalid-feedback">
-          Please fill out this field.
+          Please enter your last name.
       </div>
     </div>
   </div>
@@ -54,9 +52,9 @@
         <div class="form-row">
     <div class="col-md-12 mb-3">
         <label for="inputAddress">Street Address *</label>
-        <input type="text" class="form-control " id="street" name="street" placeholder="1234 Main St" maxlength="40" required>
+        <input type="text" class="form-control " id="street" name="street" placeholder="1234 Main St" maxlength="40" pattern="[0-9]+[A-Za-z\s]+[A-Za-z\s]" required>
         <div class="invalid-feedback">
-            Please fill out this field.
+            Please provide a street address.
         </div>
       </div>
     </div>
@@ -64,7 +62,7 @@
       <div class="form-row">
       <div class="col-md-4 mb-3">
       <label for="inputCity">City *</label>
-        <input type="text" class="form-control" id="city" name ="city" placeholder="City" maxlength="40" required>
+        <input type="text" class="form-control" id="city" name ="city" placeholder="City" maxlength="40" pattern="[A-Za-z\s]+" required>
       <div class="invalid-feedback">
         Please provide a valid city.
       </div>
@@ -131,7 +129,7 @@
 
     <div class="col-md-4 mb-3">
       <label for="validationServer05">Zip *</label>
-      <input type="text"  class="form-control" id="zip" name ="zip" placeholder="Zip"  onkeypress="return isNumeric(event)"  pattern = "[0-9]{5}" required>
+      <input type="text"  class="form-control" id="zip" name ="zip" placeholder="Zip" pattern = "[0-9]{5}" maxlength="40" required>
       <div class="invalid-feedback">
         Please provide a valid 5 digits zip code.
       </div>
@@ -175,7 +173,7 @@
         <div class="form-row">
             <div class="col-md-12 mb-3">
                 <label for="inputPhone">Phone Number *</label>
-                <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Phone"  onkeypress="return isNumeric(event)" pattern = "[0-9]{7}" required>
+                <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Phone" pattern = "[0-9]{7}" maxlength="40" required>
                 <div class="invalid-feedback">
                     Please enter a 7 digits phone number.
                 </div>
@@ -221,7 +219,7 @@
   <br>
 
   <div class="text-xs-center"> 
-  <button class="btn btn-primary"  type="submit" disabled="disabled" style="width: 300px;height: 50px;text-align: center;">Submit form</button>
+  <button class="btn btn-primary"  type="submit"  disabled="disabled" style="width: 300px;height: 50px;text-align: center;">Submit form</button>
   </div>
 
 </form>
@@ -248,25 +246,6 @@
 })();
 </script>
 
-<script>
-  //function to limit input length of numbers and check if it's number only.
-  //source: http://jsfiddle.net/DRSDavidSoft/zb4ft1qq/1/ 
-    function maxLengthCheck(object) {
-      if (object.value.length > object.maxLength)
-        object.value = object.value.slice(0, object.maxLength)
-    }
-      
-    function isNumeric (evt) {
-      var theEvent = evt || window.event;
-      var key = theEvent.keyCode || theEvent.which;
-      key = String.fromCharCode (key);
-      var regex = /[0-9]|\./;
-      if ( !regex.test(key) ) {
-        theEvent.returnValue = false;
-        if(theEvent.preventDefault) theEvent.preventDefault();
-      }
-    }
-  </script>
 
   <script>
     //check if the email fields are the same
