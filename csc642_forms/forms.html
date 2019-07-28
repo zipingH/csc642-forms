@@ -5,31 +5,32 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <style>
     h1{
       text-align: center;
     }
 
-    form{
-      width: 50%;
-      margin: 15px auto;
-    }
-
-    .text-xs-center{
+    .text-center{
       text-align: center;
     }
+    .center_div{
+    margin: 15px auto;
+    width: 60%; 
+    }
     </style>
+
   </head>
 
   <body>
-    <h1>Ziping Huang's <br> Registration Form Page</h1>
-   <p style=" width: 50%; margin: 15px auto;">* These fields are required. </p>
-
+    <h1>Ziping Huang's Registration Form Page</h1>
+   <p class="center_div">* These fields are required. </p>
   <form class="needs-validation" action="results.php" method="POST" novalidate>
+  <div class="form-center center_div">
   <!--Form group by first and last name-->
   <div class="form-group">
   <div class="form-row">
-    <div class="col-md-6 mb-3">
+    <div class="col-md-6 mb-3 ">
       <label for="validationServer01">First name *</label>
       <input type="text" class="form-control" id="validationServer01" name ="firstName" placeholder="First name" maxlength="40"  pattern="[A-Za-z\s]+" required>
       <div class="invalid-feedback">
@@ -48,7 +49,7 @@
 
 
   <!--Form group by address, city, state, and zip -->
-    <div class="form-group">
+    <div class="form-group" >
         <div class="form-row">
     <div class="col-md-12 mb-3">
         <label for="inputAddress">Street Address *</label>
@@ -215,13 +216,12 @@
   <div class="form-group"> 
       <div class="g-recaptcha" data-sitekey="6Le4ta8UAAAAAPSXdIc0E_D91wIkQT3e2bkoEoZO" data-callback="validCaptcha"></div>
   </div>
-  
-  <br>
 
-  <div class="text-xs-center"> 
-  <button class="btn btn-primary"  type="submit"  disabled="disabled" style="width: 300px;height: 50px;text-align: center;">Submit form</button>
+  <div class="text-center"> 
+  <button class="btn btn-primary"  type="submit"  disabled="disabled" style="width: 300px;height: 50px;">Submit form</button>
   </div>
-
+  
+  </div>
 </form>
 
 
