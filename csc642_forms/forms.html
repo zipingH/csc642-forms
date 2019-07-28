@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <title>CSC642 Form</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <style>
@@ -13,9 +14,8 @@
       width: 50%;
     }
     </style>
-
-
   </head>
+
   <body>
     <h1>Ziping Huang's <br> Registration Form Page</h1>
    <p style=" width: 50%; margin: 15px auto;">* These fields are required. </p>
@@ -215,7 +215,7 @@
 
   
   <button class="btn btn-secondary" type="reset" style="float: left;" >Reset form</button>
-  <button class="btn btn-primary"  type="submit" style="float: right;">Submit form</button>
+  <button class="btn btn-primary"  type="submit" disabled="disabled" style="float: right;">Submit form</button>
 
 </div>
 </div>
@@ -277,7 +277,6 @@
   <script>
   //enable submit button until captcha is checked
 
-    /*
    $("form").each(function() {
             $(this).find(':input[type="submit"]').prop('disabled', true);
         });
@@ -287,8 +286,7 @@
                 $(this).find(':input[type="submit"]').prop('disabled', false);
             });
         }
-     */
-       
+
   </script>
 
 
