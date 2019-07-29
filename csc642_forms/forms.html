@@ -183,7 +183,7 @@
 
             <div class="form-row">
               <div class="col-md-12 mb-3">
-                  <label for="inputEmail">Email</label>
+                  <label for="inputEmail">Email *</label>
                   <input type="email" class="form-control" id="email1"  name = "email" placeholder="example@gmail.com" maxlength="40" required>
                   <div class="invalid-feedback" >Please enter a valid email address.</div>
                 </div>
@@ -192,7 +192,7 @@
 
               <div class="form-row">
                 <div class="col-md-12 mb-3">
-                    <label for="inputEmail">Confirm Email</label>
+                    <label for="inputEmail">Confirm Email *</label>
                     <input type="email" class="form-control" id="email2"  name = "email" placeholder="Confirm your Email" maxlength="40" onfocus="validateMail(document.getElementById('email1'), this);" 
                     oninput="validateMail(document.getElementById('email1'), this);" required>
                     <div class="invalid-feedback" id = "confirmRequired">Email does not match!</div>
