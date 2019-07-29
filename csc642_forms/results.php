@@ -4,11 +4,14 @@
 <title>Results Verification Page</title>
 <style>
   #map{
-    height: 50%; 
+    height: 50%;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
     }
+  h1{
+    text-align: center;
+  }
   h2{
     text-align: center;
   }
@@ -18,41 +21,42 @@
 </style>
 </head>
 <body>
-<h1><center>Results Verification Page <
+<h1>Results Verification Page
+  <
 <?php
-    echo $_POST ["firstName"]; 
+    echo $_POST ["firstName"];
     echo "&nbsp";
     echo $_POST ["lastName"];
 ?>
- ></center></h1>
-<h2>Thank you for submitting this form!</h2> 
+>
+</h1>
 
-<p>Below is a summary of the information you provided:<br>
+<h2>Thank you for submitting this form!</h2>
+<p>Here is the information you have provided:<br>
+
+  <?php
+  $first = $_POST ["firstName"];
+  $last = $_POST ["lastName"];
+  $street = $_POST["street"];
+  $city = $_POST["city"];
+  $state = $_POST["state"];
+  $zip = $_POST["zip"];
+  $education = $_POST ["education"];
+  $income = $_POST ["income"];
+  $phone = $_POST ["phone"];
+  $email =  $_POST ["email"];
+  ?>
 
 <div style="width:400px; margin:auto;">
-<?php
-echo 'Full name: ' . $_POST ["firstName"] . '&nbsp';
-echo  $_POST ["lastName"] . '<br>';
-echo 'Address: ' . $_POST ["street"];
-echo ", ";
-echo $_POST["city"];
-echo ", ";
-echo $_POST["state"];
-echo ", ";
-echo $_POST["zip"];
-echo '<br>';
-echo 'Education Level: ' . $_POST ["education"] . '<br>';
-echo 'Income (yearly): ' . $_POST ["income"] . '<br>';
-echo 'Phone Number: ' . $_POST ["phone"] . '<br>';
-echo 'Email: ' . $_POST ["email"];
-$street = $_POST["street"];
-$city = $_POST["city"];
-$state = $_POST["state"];
-$zip = $_POST["zip"];
-?>
+<div><strong>Full name: </strong><?php echo $first ?> <?php echo $last ?></div>
+<div><strong>Address: </strong><?php echo $street ?>, <?php echo $city ?>, <?php echo $state ?>, <?php echo $zip ?></div>
+<div><strong>Education Level: </strong><?php echo $education ?> </div>
+<div><strong>Income (yearly): </strong><?php echo $income ?> </div>
+<div><strong>Phone Number: </strong><?php echo $phone ?> </div>
+<div><strong>Email: </strong><?php echo $email ?> </div>
 </div>
-
 <br><br>
+
 <div id="map"></div>
 
 <script>
